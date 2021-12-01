@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import SidebarBtn from "../../components/SidebarBtn/SidebarBtn";
 import { HomeIcon, Logo, SettingBtnIcon, SignInIcon, StatisticsIcon, MapIcon } from "../../assets/icons/icons";
 
@@ -14,13 +15,9 @@ const Sidebar = () => {
             </Link>
 
             <Link to="/">
-                <SidebarBtn
-                    title="Dashboard"
-                    icon={<HomeIcon />}
-                    // active={activePage === "dashboard"}
-                />
+                <SidebarBtn title="Home" icon={<HomeIcon />} />
             </Link>
-
+        
             <Link to="/map">
                 <SidebarBtn title="Map" icon={<MapIcon />} />
             </Link>

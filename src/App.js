@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import axios from "axios";  
 import Home from "./pages/Home/Home";
 import Map from "./pages/Map/Map";
 
@@ -11,8 +10,8 @@ import Statistics from "./pages/Statistics/Statistics";
 
 function App() {
 
-    let fetched = axios.get("https://api-dtp.yhxbb.uz/api/egov/open_data");
-    fetched.then(res => res.json()).then(data => console.log(data)).catch(err => console.log(err))
+    // let fetched = axios.get("https://api-dtp.yhxbb.uz/api/egov/open_data");
+    // fetched.then(res => res.json()).then(data => console.log(data)).catch(err => console.log(err))
 
     return (
         <div className="App container">
