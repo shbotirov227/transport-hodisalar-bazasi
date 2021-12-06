@@ -1,53 +1,49 @@
-import React, { useState, useEffect } from "react";
-import { axios } from 'axios';
+import React, {  useEffect } from "react";
+import axios from "./axios";
 import Header from "../../containers/Header/Header";
 import "./SettingsPage.scss";
 
-
-
 const SettingsPage = () => {
+    // const [state, setState] = useState({
+    //     isFetched: false,
+    //     data: [],
+    //     error: null,
+    // });
 
-    const [ state, setState ] = useState({
-        isFetched: false,
-        data: [],
-        error: null
-    });
+    // state = {
+    //     isFetched: false,
+    //     data: [],
+    //     error: null
+    // }
 
-
-    useEffect( () => {
-        axios.get('https://api-dtp.yhxbb.uz/api/egov/open_data', {
-            params: {
+    useEffect(() => {
+        async function fetchData() {
+            const request = await axios.get("/open_data", {
                 headers: {
-                "Access-Control-Allow-Origin": null,
-                "Content-Type": "application/json"
-            }
-            }
-        })
-            .then( res => {
-                setState({
-                    isFetched: true,
-                    data: res,
-                    error: false
-                });
-                console.log(res);
-            }).catch( err => {
-                setState({
-                    isFetched: true,
-                    data: [],
-                    error: err
-                });
-                console.log(err);
-            })
-    }, [])
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "GET",
+                    "Access-Control-Allow-Credentials": true,
+                    "X-Content-Type-Options": "nosniff",
+                    "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+                    "Content-Type": "application/json",
+                },
+            });
+            console.log(request);
+            return request;
+        }
 
-    console.log(state.data);
+        fetchData();
+    }, []);
+
+    // console.log(state.data);
 
     return (
         <div className="SettingsPage">
             <Header title="Settings" />
-        </div>
-    )   
 
+            <h1>SettingsPage</h1>
+        </div>
+    );
 };
 
 export default SettingsPage;

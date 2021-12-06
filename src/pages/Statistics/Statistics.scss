@@ -1,3 +1,19 @@
 .Statistics {
     width: 100%;
+
+    .recharts-wrapper {
+        position: relative;
+        cursor: default;
+        width: 50%;
+        height: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        float: right;
+
+        .recharts-surface {
+            width: 80%;
+            float: right;
+        }
+    }
 }

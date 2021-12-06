@@ -7,6 +7,8 @@ const SignIn = () => {
     return (
         <div className="SignIn">
             <Header title="Sign In" />
+
+            <h1>Sign In</h1>
         </div>
     );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
     BellIcon,
     SettingIcon,
@@ -22,18 +23,18 @@ const Header = ({title}) => {
                     placeholder="Type here..."
                 />
 
-                <button className="Header-btn" href="/">
+                <Link className="Header-btn" to="/signin">
                     <UserIcon />
                     Sign in
-                </button>
+                </Link>
 
-                <button className="Header-btn">
+                <Link className="Header-btn" to="/settings">
                     <SettingIcon />
-                </button>
+                </Link>
 
-                <button className="Header-btn">
+                <Link className="Header-btn" to="/">
                     <BellIcon />
-                </button>
+                </Link>
             </div>
         </div>
     );

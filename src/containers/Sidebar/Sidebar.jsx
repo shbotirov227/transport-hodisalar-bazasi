@@ -17,7 +17,7 @@ const Sidebar = () => {
             <Link to="/">
                 <SidebarBtn title="Home" icon={<HomeIcon />} />
             </Link>
-        
+
             <Link to="/map">
                 <SidebarBtn title="Map" icon={<MapIcon />} />
             </Link>
@@ -30,7 +30,7 @@ const Sidebar = () => {
 
             <Link to="/statistics">
                 <SidebarBtn title="Statistics" icon={<StatisticsIcon />} />
-            </Link>
+            </Link>  
         </div>
     );
 };
